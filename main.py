@@ -3,20 +3,24 @@ PROGRAMMERS: MOHAMMAD HADI BABALOO & SEPEHR HARFI & AMIR KHOSRO KATIRAEI
 TEACHER: MR.VAZIRI
 SCHOOL: ALLAME HELLI 1 MIDDLE SCHOOL
 '''
+
 from random import *
 from math import *
 from time import *
 import pygame
 from pygame.locals import *
+
 pygame.init()
 w = 975
 h = 650
 sc = pygame.display.set_mode((w,h))
+
 #Variables:
 fasele = 100 #faseleye beine 2 morabba dar safhe
 zel_morabba = 225 #tool zel'e yek vajhe moka'abe rubic
 Turn=pygame.mixer.music.load('RubixCube.mp3')
-#Menue
+
+
 def tabdil(a):
     white =pygame.image.load('White256.png')
     red =pygame.image.load('Red256.png')
@@ -36,11 +40,13 @@ def tabdil(a):
         return orange
     if a=='green':
         return green
+
+#Menue
 def menue():
     f1=0
     f2=1
     f3=1
-    a=pygame.image.load('menue.png')
+    a=pygame.image.load('Menue.png')
     b=pygame.image.load('Levels.png')
     c=pygame.image.load('Help.png')
     done=False
@@ -84,6 +90,7 @@ def menue():
                     if 0<x<60 and 0<y<60:
                         f3=1
                         f1=0
+
 #Random Mode
 def random():
     white ='white'
@@ -861,6 +868,7 @@ def random():
     sc.blit(tabdil(rubic[52]),(5*fasele//2+2*zel_morabba+z,3*fasele//2+zel_morabba+z+z,z,z))
     sc.blit(tabdil(rubic[53]),(5*fasele//2+2*zel_morabba+z+z,3*fasele//2+zel_morabba+z+z,z,z))
     pygame.display.update()
+
 #View 3D
 def Rx(x,y,z,t):
         y , z = y*cos(t) - z*sin(t) , z*cos(t) + y*sin(t)
@@ -1000,6 +1008,7 @@ def Show(A,C):
             rectpos((int(A[0][0])+400,int(A[0][1])+400) , (int(A[1][0])+400,int(A[1][1])+400) , (int(A[2][0])+400,int(A[2][1])+400) , (int(A[3][0])+400,int(A[3][1])+400) , C[0])
         pygame.display.flip()
         #sleep(0.03)
+
 #Main Loop:
 random()
 done=False
@@ -2033,5 +2042,6 @@ while not done:
             sc.blit(tabdil(rubic[52]),(5*fasele//2+2*zel_morabba+z,3*fasele//2+zel_morabba+z+z,z,z))
             sc.blit(tabdil(rubic[53]),(5*fasele//2+2*zel_morabba+z+z,3*fasele//2+zel_morabba+z+z,z,z))
             pygame.display.update()
+            
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #THE END
